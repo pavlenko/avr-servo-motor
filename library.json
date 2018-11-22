@@ -1,0 +1,15 @@
+{
+  "name": "ServoMotor",
+  "description": "Servo motor driver",
+  "keywords": "servo",
+  "authors": {
+    "name": "Eugeniy Pavlenko",
+    "email": "pavlenko.obs@gmail.com",
+    "url": "https://github.com/pavlenko"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pavlenko/avr-servo-motor.git"
+  },
+  "version": "1.0.0"
+}
