@@ -197,6 +197,23 @@ ServoMotor::ServoMotor() {
     }
 }
 
+void ServoMotor::setEnabled(bool enabled) {
+    if (this->index != SERVOMOTOR_INVALID) {
+        ServomotorTimer timer = SERVOMOTOR_INDEX_TO_TIMER(this->index);
+        bool isActive         = isTimerActive(timer);
+
+        if (enabled && !isActive) {
+            interruptEnable(timer);
+        }
+
+        servos[this->index].pin.attached = (uint8_t) enabled;
+
+        if (!enabled && !isActive) {
+            interruptDisable(timer);
+        }
+    }
+}
+
 uint8_t ServoMotor::attach(volatile uint8_t *port, uint8_t pin) {
     return this->attach(port, pin, SERVOMOTOR_PULSE_MIN, SERVOMOTOR_PULSE_MAX);
 }

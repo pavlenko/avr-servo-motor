@@ -58,6 +58,11 @@ public:
     ServoMotor();
 
     /**
+     * @param enabled
+     */
+    void setEnabled(bool enabled);
+
+    /**
      * Attach servomotor to PIN of specific PORT
      *
      * @param port
